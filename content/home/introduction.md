@@ -8,7 +8,7 @@ weight:  2
 
 ## Origins of NVIM
 
-- According to GitHub(where the codebase of NVIM is), the first commit of this project came on january 31
+- According to GitHub(where the codebase of NVIM is), the first commit of this project came on january 31 of 2014
 by a Brazilian named Thiago Padilha.
 
 ---

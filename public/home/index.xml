@@ -8,53 +8,39 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/nvim-presentation/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tech Talk: The NABU PC</title>
-      <link>http://localhost:1313/nvim-presentation/home/history/</link>
+      <title>Tech Talk: NVIM as code editor</title>
+      <link>http://localhost:1313/nvim-presentation/home/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/nvim-presentation/home/history/</guid>
-      <description>What is a NABU anyways? Photos </description>
+      <guid>http://localhost:1313/nvim-presentation/home/introduction/</guid>
+      <description> Origins of NVIM According to github(where is the codebase of nvim), the first commit of this editor comes on january 31 by a Brasilian named Thiago Padilha Motivations behind development Frustration with limitations of existing editors. Desire for a more extensible and community-driven approach. Recognition of the importance of collaboration and open-source principles. </description>
     </item>
     <item>
-      <title>Tech Talk: The NABU PC</title>
-      <link>http://localhost:1313/nvim-presentation/home/architecture/</link>
+      <title>Tech Talk: NVIM as code editor</title>
+      <link>http://localhost:1313/nvim-presentation/home/advantages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/nvim-presentation/home/architecture/</guid>
-      <description>Nabu Architecture void nabupc_state::nabupc(machine_config &amp;amp;config) { Z80(config, m_maincpu, 10.738635_MHz_XTAL / 3); // 3.58 Mhz SCREEN(config, m_screen, SCREEN_TYPE_RASTER); TMS9918A(config, m_tms9918a, 10.738635_MHz_XTAL); m_tms9918a-&amp;gt;set_screen(m_screen); m_tms9918a-&amp;gt;set_vram_size(0x4000); SPEAKER(config, m_speaker).front_center(); AY8910(config, m_ay8910, 10.738635_MHz_XTAL / 6); // 1.79 Mhz m_ay8910-&amp;gt;add_route(ALL_OUTPUTS, m_speaker, 0.3); } Memory Map void nabupc_state::nabupc(machine_config &amp;amp;config) { Z80(config, m_maincpu, 10.738635_MHz_XTAL / 3); m_maincpu-&amp;gt;set_addrmap(AS_PROGRAM, &amp;amp;nabupc_state::memory_map); SCREEN(config, m_screen, SCREEN_TYPE_RASTER); TMS9918A(config, m_tms9918a, 10.738635_MHz_XTAL); m_tms9918a-&amp;gt;set_screen(m_screen); m_tms9918a-&amp;gt;set_vram_size(0x4000); SPEAKER(config, m_speaker).front_center(); AY8910(config, m_ay8910, 10.738635_MHz_XTAL / 6); m_ay8910-&amp;gt;add_route(ALL_OUTPUTS, m_speaker, 0.3); } void nabupc_state::memory_map(address_map &amp;amp;map) { map(0x0000, 0xffff).</description>
+      <guid>http://localhost:1313/nvim-presentation/home/advantages/</guid>
+      <description> So, why I choose NVIM over other editors? Let&amp;rsquo;s explore its key advantages Efficiency in performance Modular and extensible architecture Great community support Used to use vim Really nice customization Feel fulfilled with an accomplished setup 😂 </description>
     </item>
     <item>
-      <title>Tech Talk: The NABU PC</title>
-      <link>http://localhost:1313/nvim-presentation/home/peripheral/</link>
+      <title>Tech Talk: NVIM as code editor</title>
+      <link>http://localhost:1313/nvim-presentation/home/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/nvim-presentation/home/peripheral/</guid>
-      <description>Expansion Card Photos Expansion Bus void nabupc_state::nabupc(machine_config &amp;amp;config) { Z80(config, m_maincpu, 10.738635_MHz_XTAL / 3); m_maincpu-&amp;gt;set_addrmap(AS_PROGRAM, &amp;amp;nabupc_state::memory_map); m_maincpu-&amp;gt;set_addrmap(AS_IO, &amp;amp;nabupc_state::io_map); m_maincpu-&amp;gt;set_irq_acknowledge_callback(FUNC(nabupc_state::int_ack_cb)); SCREEN(config, m_screen, SCREEN_TYPE_RASTER); TMS9918A(config, m_tms9918a, 10.738635_MHz_XTAL); m_tms9918a-&amp;gt;set_screen(m_screen); m_tms9918a-&amp;gt;set_vram_size(0x4000); m_tms9918a-&amp;gt;int_callback().set(*this, FUNC(nabupc_state::int_w&amp;lt;4&amp;gt;)); SPEAKER(config, m_speaker).front_center(); AY8910(config, m_ay8910, 10.738635_MHz_XTAL / 6); m_ay8910-&amp;gt;add_route(ALL_OUTPUTS, m_speaker, 0.3); m_ay8910-&amp;gt;port_b_read_callback().set(FUNC(nabupc_state::psg_portb_r)); m_ay8910-&amp;gt;port_a_write_callback().set(FUNC(nabupc_state::psg_porta_w)); I8251(config, m_kbduart, 10.738635_MHz_XTAL / 6); m_kbduart-&amp;gt;rxrdy_handler().set(*this, FUNC(nabupc_state::int_w&amp;lt;5&amp;gt;)); clock_device &amp;amp;sclk(CLOCK(config, &amp;quot;sclk&amp;quot;, 10.738635_MHz_XTAL / 96)); sclk.signal_handler().set(m_kbduart, FUNC(i8251_device::write_rxc)); rs232_port_device &amp;amp;kbd(RS232_PORT(config, &amp;quot;kbd&amp;quot;, keyboard_devices, &amp;quot;nabu&amp;quot;)); kbd.rxd_handler().set(m_kbduart, FUNC(i8251_device::write_rxd)); AY31015(config, m_hccauart); m_hccauart-&amp;gt;set_auto_rdav(true); m_hccauart-&amp;gt;write_dav_callback().set(FUNC(nabupc_state::int_w&amp;lt;7&amp;gt;)); m_hccauart-&amp;gt;write_tbmt_callback().set(FUNC(nabupc_state::int_w&amp;lt;6&amp;gt;)); m_hccauart-&amp;gt;write_fe_callback().set(FUNC(nabupc_state::hcca_fe_w)); m_hccauart-&amp;gt;write_or_callback().set(FUNC(nabupc_state::hcca_oe_w)); m_hccauart-&amp;gt;write_so_callback().</description>
+      <guid>http://localhost:1313/nvim-presentation/home/installation/</guid>
+      <description>Installation macOS/Linux&#xA;brew install neovim https://github.com/neovim/neovim/blob/master/INSTALL.md</description>
     </item>
     <item>
-      <title>Tech Talk: The NABU PC</title>
-      <link>http://localhost:1313/nvim-presentation/home/hcca/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/nvim-presentation/home/hcca/</guid>
-      <description>HCCA - Serial Protocol Description NABU Adapter Description Hello 0x83 &amp;gt; &amp;lt; 0x10 0x06 0xE4 Ack/Confirm Get Status 0x82 &amp;gt; &amp;lt; 0x10 0x06 Ack Channel 0x01 &amp;gt; &amp;lt; 0x1F 0x10 0xE1 Finished Set Status 0x81 &amp;gt; &amp;lt; 0x10 0x06 Ack Loading 0x8F 0x05 &amp;gt; &amp;lt; 0xE4 Confirm Packet Req 0x84 &amp;gt; &amp;lt; 0x10 0x06 Ack Packet Num 0xNN &amp;gt; Segment Num 0xNN 0xNN 0xNN &amp;gt; &amp;lt; 0x91 0xE4 Authorized Ack 0x10 0x06 &amp;gt; &amp;lt; [PACKET] Packet Data &amp;lt; 0x10 0xE1 Finished HCCA - Serial Packets struct packet { uint8_t segment_id[3]; // ID of segment uint8_t packet_number; // Current packet number uint8_t owner; // Owner uint8_t tier[4]; // Tier uint8_t mbytes[2]; // Mystery Bytes always 0x7F 0x80 uint8_t type; // Type of packet uint8_t pak_number[2]; // Pak Number uint8_t offset[2]; // File Offset uint8_t data[993]; // data + crc16 (data max size is 991) }; HCCA MAME State Machine void network_adapter_base::received_byte(uint8_t byte) { switch (m_state) { case state::IDLE: idle(byte); break; case state::CHANNEL_REQUEST: channel_request(byte); break; case state::SEGMENT_REQUEST: segment_request(byte); break; case state::SETSTATUS_REQUEST: set_status(byte); break; case state::GETSTATUS_REQUEST: get_status(byte); break; case state::SEND_SEGMENT: send_segment(byte); break; } } void network_adapter_base::idle(uint8_t byte) { m_substate = 0; switch (byte) { case 0x85: transmit_byte(0x10); transmit_byte(0x06); m_state = state::CHANNEL_REQUEST; break; case 0x84: transmit_byte(0x10); transmit_byte(0x06); m_state = state::SEGMENT_REQUEST; break; case 0x83: transmit_byte(0x10); transmit_byte(0x06); transmit_byte(0xe4); break; case 0x82: transmit_byte(0x10); transmit_byte(0x06); m_state = state::GETSTATUS_REQUEST; break; case 0x81: transmit_byte(0x10); transmit_byte(0x06); m_state = state::SETSTATUS_REQUEST; break; } } void network_adapter_base::set_status(uint8_t byte) { if (m_substate == 1) { transmit_byte(0xe4); m_state = state::IDLE; } ++m_substate; } void network_adapter_base::get_status(uint8_t byte) { if (byte == 0x01) { transmit_byte(bool(m_config-&amp;gt;read() &amp;amp; 1) ?</description>
-    </item>
-    <item>
-      <title>Tech Talk: The NABU PC</title>
-      <link>http://localhost:1313/nvim-presentation/home/modern_adapter/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/nvim-presentation/home/modern_adapter/</guid>
-      <description>Modern Internet Adapters Internet Adapter (DJ Sures) https://nabu.ca/downloads-nabu-internet-adapter NabuNetworkEmulator (Nick Daniels) https://github.com/GryBsh/NabuNetworkEmulator nabud (Jason Thorpe) https://github.com/thorpej/nabud Nabu Server (Geek with Social skills) https://www.nabunetwork.com/resources/software-downloads/ </description>
-    </item>
-    <item>
-      <title>Tech Talk: The NABU PC</title>
-      <link>http://localhost:1313/nvim-presentation/home/emulation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/nvim-presentation/home/emulation/</guid>
-      <description>Emulation MAME https://github.com/mamedev/mame https://github.com/brijohn/mame/tree/nabupc_wip Marduk https://github.com/buricco/marduk </description>
-    </item>
-    <item>
-      <title>Tech Talk: The NABU PC</title>
+      <title>Tech Talk: NVIM as code editor</title>
       <link>http://localhost:1313/nvim-presentation/home/thanks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/nvim-presentation/home/thanks/</guid>
-      <description>Thanks James Pellegrini Adrian Black Leo Binkowski DJ Sures </description>
+      <description>Thanks </description>
+    </item>
+    <item>
+      <title>Tech Talk: NVIM as code editor</title>
+      <link>http://localhost:1313/nvim-presentation/home/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/nvim-presentation/home/configuration/</guid>
+      <description>Configuration </description>
     </item>
   </channel>
 </rss>

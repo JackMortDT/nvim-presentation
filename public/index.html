@@ -3,14 +3,14 @@
   <head>
 	<meta name="generator" content="Hugo 0.123.7"><script src="/nvim-presentation/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=nvim-presentation/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
-<title>Nvim presentation</title>
+<title>Tech Talk: NVIM as code editor</title>
 
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="/nvim-presentation/reveal-js/dist/reset.css">
 <link rel="stylesheet" href="/nvim-presentation/reveal-js/dist/reveal.css"><link rel="stylesheet" href="/nvim-presentation/reveal-js/dist/theme/black.css" id="theme">
-<link rel="stylesheet" href="/nvim-presentation/highlight-js/github.min.css">
+<link rel="stylesheet" href="/nvim-presentation/highlight-js/monokai.min.css">
 <link rel="stylesheet" href="/custom.slides.css" />
 
   </head>
@@ -20,33 +20,83 @@
       <div class="slides">
   
 
-    <section><h1 id="hello-world">Hello world!</h1>
-<p>This is my first slide.</p>
-</section><section>
-<h1 id="hello-mars">Hello Mars!</h1>
-<p>This is my second slide.</p>
-</section><section>
-
-
-<section data-shortcode-section>
-<h1 id="vertical-slide-1">Vertical slide 1</h1>
-</section><section>
-<h1 id="vertical-slide-2">Vertical slide 2</h1>
-
-</section>
-</section><section>
-<p>Other slide</p>
-</section><section>
-<pre><code class="language-go" data-line-numbers="1|2|3-5">package main
-import &quot;fmt&quot;
-func main() {
-    fmt.Println(&quot;Hello world!&quot;)
-}
-</code></pre>
+    <section><h2 id="code-editor-alternatives">Code Editor Alternatives</h2>
+<h3 id="a-practical-overview-with-neovim">A practical overview with neovim</h3>
 </section>
 
   
 
+    <section>
+
+<section data-shortcode-section>
+<h2 id="origins-of-nvim">Origins of NVIM</h2>
+<ul>
+<li>According to GitHub(where the codebase of NVIM is), the first commit of this project came on january 31
+by a Brazilian named Thiago Padilha.</li>
+</ul>
+</section><section>
+<h2 id="motivations-behind-development">Motivations behind development</h2>
+<ul>
+<li>Frustration with limitations of existing editors.</li>
+<li>Desire for a more extensible and community-driven approach.</li>
+<li>Recognition of the importance of collaboration and open-source principles.</li>
+</ul>
+
+</section>
+</section>
+    <section>
+
+<section data-shortcode-section>
+<h3 id="so-why-i-choose-nvim-over-other-editors-lets-explore-its-key-advantages">So, why I choose NVIM over other editors? Let&rsquo;s explore its key advantages</h3>
+</section><section>
+<ul>
+<li>Efficiency in performance</li>
+<li>Modular and extensible architecture</li>
+<li>Great community support</li>
+</ul>
+</section><section>
+<ul>
+<li>Used to use vim</li>
+<li>Really nice customization</li>
+<li>Feel fulfilled with an accomplished setup 😂</li>
+</ul>
+
+</section>
+</section>
+    <section>
+
+<section data-shortcode-section>
+<h2 id="installation">Installation</h2>
+</section><section>
+<p>macOS/Linux</p>
+<pre><code class="language-bash">brew install neovim
+</code></pre>
+</section><section>
+<p><a href="https://github.com/neovim/neovim/blob/master/INSTALL.md">https://github.com/neovim/neovim/blob/master/INSTALL.md</a></p>
+
+</section>
+</section>
+    <section>
+
+<section data-shortcode-section>
+<h3 id="configuration">Configuration</h3>
+</section><section>
+<ul>
+<li>Your nvim configuration is written with the programming language called <a href="https://www.lua.org/">Lua</a></li>
+<li>All nvim configuration start in your <code>init.lua</code> file.</li>
+</ul>
+<pre><code class="language-sh">~/.config/nvim/
+</code></pre>
+</section><section>
+<ul>
+<li><a href="https://github.com/JackMortDT/init.lua/tree/clojure-setup">Repository</a> for the configuration.</li>
+</ul>
+</section><section>
+
+</section>
+</section>
+    <section><h2 id="thanks">Thanks</h2>
+</section>
 
 </div>
       
@@ -83,7 +133,7 @@ func main() {
   }
 
   var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
-  var revealHugoSiteParams = {"height":768,"highlight_theme":"github","slide_number":true,"width":1024};
+  var revealHugoSiteParams = {"height":768,"highlight_theme":"monokai","slide_number":true,"width":1024};
   var revealHugoPageParams = {};
 
   var revealHugoPlugins = {
@@ -103,6 +153,16 @@ func main() {
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

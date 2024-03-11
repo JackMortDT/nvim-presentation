@@ -1,7 +1,7 @@
 ---
 title: "Tech Talk: NVIM as code editor"
 outputs: ["Reveal"]
+weight:  10
 ---
 
-## Code Editor Alternatives
-### A practical overview with neovim
+## Thanks

@@ -2,26 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/nvim-presentation/home/history/</loc>
+    <loc>http://localhost:1313/nvim-presentation/home/introduction/</loc>
   </url><url>
-    <loc>http://localhost:1313/nvim-presentation/home/architecture/</loc>
+    <loc>http://localhost:1313/nvim-presentation/home/advantages/</loc>
   </url><url>
-    <loc>http://localhost:1313/nvim-presentation/home/peripheral/</loc>
-  </url><url>
-    <loc>http://localhost:1313/nvim-presentation/home/hcca/</loc>
-  </url><url>
-    <loc>http://localhost:1313/nvim-presentation/home/modern_adapter/</loc>
-  </url><url>
-    <loc>http://localhost:1313/nvim-presentation/home/emulation/</loc>
+    <loc>http://localhost:1313/nvim-presentation/home/installation/</loc>
   </url><url>
     <loc>http://localhost:1313/nvim-presentation/home/thanks/</loc>
+  </url><url>
+    <loc>http://localhost:1313/nvim-presentation/home/configuration/</loc>
   </url><url>
     <loc>http://localhost:1313/nvim-presentation/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/nvim-presentation/home/</loc>
   </url><url>
-    <loc>http://localhost:1313/nvim-presentation/</loc>
-  </url><url>
     <loc>http://localhost:1313/nvim-presentation/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/nvim-presentation/</loc>
   </url>
 </urlset>

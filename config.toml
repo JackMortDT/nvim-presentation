@@ -15,7 +15,7 @@ isHTML = true
 codeFences = false
 
 [params.reveal_hugo]
-highlight_theme = "github"
+highlight_theme = "monokai"
 slide_number = true
 width = 1024
 height = 768
